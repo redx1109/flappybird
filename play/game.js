@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gamescreen");
 const ctx = canvas.getContext("2d");
-canvas.width = 1450;
-canvas.height = 700;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 let score = document.getElementById("score");
 let scoreCount = 0;
 let animationId;
@@ -28,6 +28,7 @@ bgImg.src = "bg2.png"
 
 let pointSound = new Audio("point.mp3")
 document.addEventListener("touchstart", function(e){
+    e.preventDefault();
     jump();
 })
 
