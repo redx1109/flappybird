@@ -42,6 +42,24 @@ document.addEventListener("keydown", function(e){
     }   
 })        
 
+function resizeCanvas() {
+    const ratio = 1450 / 700;
+    let w = window.innerWidth;
+    let h = w / ratio;
+
+    if (h > window.innerHeight) {
+        h = window.innerHeight;
+        w = h * ratio;
+    }
+
+    canvas.style.width  = Math.floor(w) + 'px';
+    canvas.style.height = Math.floor(h) + 'px';
+}
+
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', resizeCanvas);
+resizeCanvas();
+
 function jump() {
     if (isGameOver) return
     bird.velocity = -10;
