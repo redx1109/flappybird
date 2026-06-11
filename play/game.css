@@ -85,10 +85,8 @@ body {
     }
     #gamescreen {
         display: block;
-        border-radius: 8px;
-        width: min(100vw, calc(100vh * 1450 / 700));
-        height: auto;
-        aspect-ratio: 1450 / 700;
+        border-radius: 12px;
+        border: 2px solid black;
         margin: 0 auto;
     }
     .score {
