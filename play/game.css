@@ -1,7 +1,7 @@
 body {
     background-color: rgb(46, 95, 175);
+    overflow: hidden; /* ← stops page scroll during game */
 }
-
 #gamescreen {
     border: 2px solid black;
     display: block;
@@ -16,7 +16,6 @@ body {
     font-size: 50px;
     justify-content: center;
 }
-
 #popup {
     display: flex;
     position: absolute;
@@ -24,15 +23,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:rgb(46, 95, 175);
+    background-color: rgb(46, 95, 175);
     padding: 20px;
     text-align: center;
     border-radius: 12px;
     flex-direction: column;
-    align-items: center; 
-    text-transform: false;
+    align-items: center;
+    text-transform: none; /* ← fixed */
 }
-    
 #popup button {
     background-color: rgba(104, 87, 87, 0.288);
     color: white;
@@ -40,42 +38,33 @@ body {
     outline: none;
     border: none;
     border-radius: 12px;
+    font-size: 16px; /* ← added */
+    padding: 8px 16px; /* ← added */
+    cursor: pointer;
 }
-
 @media (max-width: 600px) {
     #gamescreen {
-    border: 2px solid black;
-    display: flex;
-    margin: 20px auto;
-    border-radius: 12px;
-    width: 100vw;
-    aspect-ratio: 1450 / 700;
-    height: auto;
+        display: block; /* ← fixed from flex */
+        margin: 0 auto;
+        border-radius: 12px;
+        width: 100%;    /* ← fixed from 100vw */
+        aspect-ratio: 1450 / 700;
+        height: auto;
     }
-
     .score {
-        display: flex;
         font-size: 12vw;
-        align-items: center;
-        justify-self: center;
+        justify-content: center;
     }
-
     #popup {
-        background-color: rgb(46, 95, 175);
         width: 65vw;
-        height: 21vh;
         padding: 10px;
-        align-items: center;
         justify-content: center;
     }
     #popup button {
         width: 20vw;
         height: 5vh;
         background-color: rgb(34, 57, 101);
-        color: white;
-        margin-bottom: 20px;
-        outline: none;
-        border: none;
         border-radius: 5px;
+        font-size: 3vw; /* ← added for mobile */
     }
 }
