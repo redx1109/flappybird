@@ -68,3 +68,31 @@ body {
         font-size: 3vw; /* ← added for mobile */
     }
 }
+@media (max-width: 900px) and (orientation: portrait) {
+    #gamescreen { display: none; }
+    .score { display: none; }
+    #rotate-msg {
+        display: flex !important;
+    }
+}
+@media (max-width: 900px) and (orientation: landscape) {
+    body { margin: 0; padding: 0; }
+    #gamescreen {
+        display: block;
+        margin: 0 auto;
+        height: 100vh;
+        width: auto;
+        border-radius: 8px;
+    }
+    .score {
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        font-size: 8vw;
+        z-index: 10;
+    }
+    #popup button {
+        font-size: 3vw;
+        padding: 6px 12px;
+    }
+}
